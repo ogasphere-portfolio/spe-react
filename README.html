@@ -1,0 +1,164 @@
+<h1 id="exo-decomposer">Exo decompOser</h1>
+<p>Tu te rappelles de cette présentation en saison 2 ?</p>
+<p><img src="docs/slide-decomposer.png" alt="Slide" /></p>
+<p>On présentait l'intérêt de bien décomposer son code en plusieurs instructions simples afin d'arriver à ses fins, c'est à dire la case F3.</p>
+<p>Désormais, dans cet exercice, tu vas devoir coder le programme qui va lire les instructions et ensuite déplacer l'élément rouge.  <br />
+Autrement, tu vas coder un <strong>interpréteur</strong> d'un langage de programmation très simple, qui ne comprend que <strong>3 instructions</strong> :</p>
+<ul>
+<li>turn left</li>
+<li>turn right</li>
+<li>move forward</li>
+</ul>
+<h2 id="etapes">Etapes</h2>
+<h3 id="1---board-surfer-snowboarder">1 - Board :surfer: 🏂</h3>
+<h4 id="11---board-simple">1.1 - Board simple</h4>
+<p>On va commencer par dessiner la grille, la board, le plateau.</p>
+<ul>
+<li>déclarer la méthode <code>drawBoard()</code> dans <code>app</code> permettant de dessiner la board</li>
+<li>dans le code HTML, une div ayant l'id <code>board</code> est destinée à contenir le code HTML du plateau/board</li>
+<li>partons sur un plateau de 4 lignes et de 6 colonnes</li>
+<li>dans la méthode <code>drawBoard()</code> créer les div avec les bonnes classes pour avoir ces 4 lignes et 6 colonnes</li>
+<li>pour la partie esthétique, la feuille de style CSS te fournie tout ce dont tu as besoin</li>
+</ul>
+<p><img src="docs/board1.png" alt="plateau simple" /></p>
+<p><details><summary>Code HTML du plateau</summary></p>
+<p><img src="docs/board-html1.png" alt="HTML plateau simple" /></p>
+<p></details></p>
+<h4 id="12---cases-de-départ-et-darrivée">1.2 - Cases de départ et d'arrivée</h4>
+<ul>
+<li>définir la première case en haut à gauche comme départ</li>
+<li>définir la dernière case en bas à droite comme arrivée</li>
+<li>dans la méthode <code>drawBoard()</code> ajouter les classes CSS permettant de visualiser ces 2 cases</li>
+</ul>
+<p><img src="docs/board2.png" alt="plateau avec départ et arrivée" /></p>
+<p><details><summary>Code HTML du plateau</summary></p>
+<p><img src="docs/board-html2.png" alt="HTML plateau avec départ et arrivée" /></p>
+<p></details></p>
+<h4 id="13---curseur--élément-rouge">1.3 - Curseur / élément rouge</h4>
+<ul>
+<li>définir la position initiale du curseur rouge comme étant la case de départ</li>
+<li>dans la méthode <code>drawBoard()</code> ajouter les classes CSS permettant de visualiser ces 2 cases</li>
+</ul>
+<p><img src="docs/board3.png" alt="plateau avec curseur" /></p>
+<p><details><summary>Code HTML du plateau</summary></p>
+<p><img src="docs/board-html3.png" alt="HTML plateau avec curseur" /></p>
+<p></details></p>
+<h2 id="2---commandes-video_game">2 - Commandes 🎮</h2>
+<h3 id="21---avancer">2.1 - Avancer</h3>
+<ul>
+<li>créer une méthode <code>moveForward()</code> permettant d'avancer le curseur<ul>
+<li>pour avancer, il faut savoir dans quelle direction le curseur est orienté</li>
+<li>par défaut, le curseur est orienté vers la droite</li>
+<li>la position du curseur va être modifiée par la méthode <code>moveForward()</code></li></ul></li>
+<li>pour tester, appeler cette méthode avant l'appel à la méthode <code>drawBoard()</code><ul>
+<li>et vérifier que le curseur est bien avancé dans la bonne case</li>
+<li>si la position est correcte dans le code mais qu'on ne la visualise pas correctement, moifier la méthode <code>drawBoard()</code> pour prendre en compte la position actuelle du curseur (cette position va changer dans le temps)</li></ul></li>
+</ul>
+<p><img src="docs/command1.png" alt="curseur avancé" /></p>
+<p><details><summary>Code HTML du plateau</summary></p>
+<p><img src="docs/command-html1.png" alt="HTML plateau avec curseur avancé" /></p>
+<p></details></p>
+<h3 id="22---touner-à-droite">2.2 - Touner à droite</h3>
+<ul>
+<li>créer une méthode <code>turnRight()</code> permettant de changer la direction du curseur<ul>
+<li>pour tourner, il faut savoir dans quelle direction le curseur est actuellement orienté</li>
+<li>la position du curseur n'est pas modifiée</li></ul></li>
+<li>pour tester, appeler cette méthode avant l'appel à la méthode <code>drawBoard()</code>, et après <code>moveForward()</code><ul>
+<li>et vérifier que le curseur a bien avancé dans la bonne case</li>
+<li>et que son orientation est bien vers le bas</li>
+<li>si l'orientation est correcte dans le code mais qu'on ne la visualise pas correctement, moifier la méthode <code>drawBoard()</code> pour prendre en compte l'orientation actuelle du curseur (des classes CSS permettent de représenter l'orientation du curseur)</li></ul></li>
+</ul>
+<p><img src="docs/command2.png" alt="curseur à droite" /></p>
+<p><details><summary>Code HTML du plateau</summary></p>
+<p><img src="docs/command-html2.png" alt="HTML plateau avec curseur tourné vers le bas" /></p>
+<p></details></p>
+<h3 id="23---touner-à-gauche">2.3 - Touner à gauche</h3>
+<ul>
+<li>créer une méthode <code>turnLeft()</code> permettant de changer la direction du curseur</li>
+<li>après avoir tourné à droite pour tester <code>turnRight()</code><ul>
+<li>avancer</li>
+<li>puis tester la méthode <code>turnLeft()</code></li></ul></li>
+</ul>
+<p><img src="docs/command3.png" alt="curseur à left" /></p>
+<p><details><summary>Code HTML du plateau</summary></p>
+<p><img src="docs/command-html3.png" alt="HTML plateau avec curseur tourné vers la droite" /></p>
+<p></details></p>
+<h3 id="24---tests">2.4 - Tests</h3>
+<ul>
+<li>effectues plusieurs tests pour vérifier que les méthodes créées ont le comportement souhaité</li>
+</ul>
+<h2 id="3---interpréter-le-langage-computer">3 - Interpréter le langage 💻</h2>
+<h3 id="31---lancer-linterpréteur">3.1 - Lancer l'interpréteur</h3>
+<ul>
+<li>au click sur le bouton <em>Launch script</em>, tu dois dire à JS d'exécuter la méthode <code>handleLaunchScriptButton()</code> fournie</li>
+<li>récupérer le contenu du textarea</li>
+<li>séparer chaque ligne du code =&gt; récupérer un "tableau de lignes"<ul>
+<li>une méthode Javascript te permet de faire cela facilement, à toi de trouver 😉</li></ul></li>
+<li>stocker le tableau de lignes dans une variable nommée <code>codeLines</code></li>
+<li>laisser le code suivant à la fin de cette méthode<ul>
+<li>ce code permettra de boucler sur tout les lignes</li></ul></li>
+</ul>
+<p><details><summary>Code à laisser tel quel</summary></p>
+<pre><code class="hljs js language-js">    <span class="hljs-comment">// Appel, après 2sec, la méthode codeLineLoop() avec la variable et l&#x27;index de départ (0)</span>
+    <span class="hljs-variable language_">window</span>.<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+      app.<span class="hljs-title function_">codeLineLoop</span>(codeLines, <span class="hljs-number">0</span>);
+    }, <span class="hljs-number">2000</span>);
+</code></pre>
+<p></details></p>
+<h3 id="32---interpréter">3.2 - Interpréter</h3>
+<ul>
+<li>dans la méthode <code>codeLineLoop()</code> fournie<ul>
+<li>interpréter chaque ligne de code</li>
+<li>effectuer l'action selon le code</li></ul></li>
+<li>laisser le code suivant à la fin de la méthode <code>codeLineLoop()</code><ul>
+<li>car elle s'occupe de boucler sur les lignes puis, une fois les lignes parcourues, lancer la méthode gérant la victoire ou non</li>
+<li>et aussi, car ça permet d'afficher la board après chaque "mouvement"</li></ul></li>
+</ul>
+<p><details><summary>Code à laisser tel quel</summary></p>
+<pre><code class="hljs js language-js">    <span class="hljs-comment">// Increment</span>
+    index++;
+
+    <span class="hljs-comment">// if still a line to interpret</span>
+    <span class="hljs-keyword">if</span> (index &lt; codeLines.<span class="hljs-property">length</span>) {
+      <span class="hljs-comment">// Recall same method (=&gt; make a loop)</span>
+      <span class="hljs-variable language_">window</span>.<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        app.<span class="hljs-title function_">codeLineLoop</span>(codeLines, index);
+      }, <span class="hljs-number">1000</span>);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-variable language_">window</span>.<span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) {
+        app.<span class="hljs-title function_">checkSuccess</span>();
+      }, <span class="hljs-number">1000</span>);
+    }
+</code></pre>
+<p></details></p>
+<h3 id="33---erreurs">3.3 - Erreurs</h3>
+<ul>
+<li>dans la méthode <code>codeLineLoop()</code><ul>
+<li>l'instruction notée dans le textarea peut ne pas être une des commandes du code</li>
+<li>dans ce cas, arrêter la "boucle" et afficher une erreur</li></ul></li>
+</ul>
+<h2 id="4---you-win--fireworks">4 - You win ! 🎆</h2>
+<ul>
+<li>une fois la "boucle" terminée</li>
+<li>la méthode fournie <code>checkSuccess()</code> est appelée</li>
+<li>cette méthode va tester si le curseur est bien dans la case d'arrivée<ul>
+<li>si oui =&gt; you win !</li>
+<li>si non =&gt; you loose …</li></ul></li>
+</ul>
+<h2 id="5---faut-pas-déborder-pencil2">5 - Faut pas déborder ✏️</h2>
+<ul>
+<li>au moment d'avancer, il faut tester si on est pas sorti du cadre</li>
+<li>et si c'est le cas, afficher une erreur et arrêter le script</li>
+</ul>
+<h2 id="6---aléatoire-twisted_rightwards_arrows">6 - Aléatoire 🔀</h2>
+<ul>
+<li>rendre la case de départ aléatoire</li>
+<li>rendre la case d'arrivée aléatoire</li>
+</ul>
+<h1 id="bonus-rainbow">Bonus 🌈</h1>
+<p>Au choix, dans l'ordre voulu 😉</p>
+<ul>
+<li>pouvoir relancer le script sans recharger la page</li>
+<li>autoriser des lignes vides dans le code</li>
+<li>autoriser des commentaires dans le code</li>
+</ul>
